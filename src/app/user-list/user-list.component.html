@@ -1,0 +1,4 @@
+
+<h1>{{selectedUser.name}}</h1>
+<app-person-row
+*ngFor = "let user of users" [user]='user' (onSelected)="selected($event)"></app-person-row>

@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-/* 
+import { UserListComponent } from './user-list/user-list.component';
+import { PersonRowComponent } from './person-row/person-row.component';
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        UserListComponent,
+        PersonRowComponent
       ],
     }).compileComponents();
   }));
@@ -29,4 +33,3 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('h1').textContent).toContain('Welcome to unit-test!');
   });
 });
- */

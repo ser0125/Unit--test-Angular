@@ -10,6 +10,12 @@ export class UserService {
 
   path = 'http://jsonplaceholder.typicode.com/users';
   constructor(private http: Http) { }
+
+  getAllUsers(){
+    return this.http.get(`${this.path}`, this.makeOptions()).pipe(
+      map(response => response.json()));
+  }
+
   getUser(id: number): Observable<any>{
     return this.http.get(`${this.path}/${id}`).pipe(
     map(response => response.json()));

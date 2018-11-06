@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { User } from '../user';
 
 @Component({
@@ -7,6 +7,7 @@ import { User } from '../user';
   styleUrls: ['./person-row.component.css']
 })
 export class PersonRowComponent implements OnInit {
+  @Output() onSelected = new EventEmitter<User>();
   @Input() user: User;
   email: string;
 
@@ -15,7 +16,11 @@ export class PersonRowComponent implements OnInit {
   ngOnInit() {
   }
   showEmailfunction(){
+
     this.email = this.user.email;
+  }
+  selected(){
+    this.onSelected.emit(this.user);
   }
 
 }

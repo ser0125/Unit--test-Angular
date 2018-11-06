@@ -50,4 +50,18 @@ describe('PersonRowComponent', () => {
     //Assert
     expect(el.textContent).toEqual('sersh@gmail.com');
   });
+
+  it('Should raise event when clicked', () => {
+    //Arrange
+    let selectedUser: User;
+    component.onSelected.subscribe((user: User) => {
+      selectedUser = user;
+    });
+    //Act
+    let button =  fixture.debugElement.query(By.css('.btnSelected'));
+    button.triggerEventHandler('click', null);
+    fixture.detectChanges();
+     //Assert
+     expect(selectedUser.name).toEqual('Sersh');
+  });
 });
